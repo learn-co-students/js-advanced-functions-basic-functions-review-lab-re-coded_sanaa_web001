@@ -31,11 +31,13 @@ let Calculator = {
 };
 
 
-function actionApplyer(arg1, arrayOfTransforms) {
-  if (arrayOfTransforms.length === 0) {
-    return arg1;
+let actionApplyer = function(start, ray) {
+    let a = start
+  
+    for (let i = 0; i < ray.length; i++ ){
+      a = ray[i](a)
+    }
+  
+    return a
   }
-   arrayOfTransforms.forEach(() => arg1);
-   return 4;
-}
 
